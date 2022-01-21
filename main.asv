@@ -1,0 +1,12 @@
+% usage: 
+% optcorr_batch()  use FileOpenDialog to load elmaven output file(.csv). Use all default settings,
+% optcorr_batch(name,value) use name-value pair for parameter settings: 
+% example:
+
+fname ='example1.csv'; % defualt is 
+solver = 'optcorr';  % or isocorr
+resolution = 140000;  % 
+ppm = 5;  %ppm setting used in ElMaven 
+purity = 0.99;  %purity of tracer
+
+optcorr_batch('fname',fname,'solver',solver,'resolution',resolution,'ppm',ppm,'purity',purity)
