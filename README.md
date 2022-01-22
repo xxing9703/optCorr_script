@@ -18,6 +18,13 @@ The state-of-the-art resolution-dependent algorithms like Accucorr and IsoCorv2 
 <br />  **optcorr_batch('resolution',70000,'purity',0.98);**   default purity is 0.99.  no need to specify tracer type, which will be recognized automatically.
 <br />  **optcorr_batch('solver','isocorr');**   isocorr is the earlier algorithm that does not correct for non-tracer natural abundances. default is 'optcorr'.
 
+or write a simple reusable script like this:
+
+<br /> fname = 'example1.csv';
+<br /> res = 480000;
+<br /> ppm = 3;
+<br /> purity = 0.99;
+<br /> optcorr_batch('fname',fname,'resolution',res,'ppm',ppm,'purity',purity);
  
       
 
