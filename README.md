@@ -16,7 +16,7 @@ The state-of-the-art resolution-dependent algorithms like Accucorr and IsoCorv2 
 <br />  **optcorr_batch('fname','C:\data\example1.csv');**   if fname is specified, FileOpenDilaglog won't popup.
 <br />  **optcorr_batch('resolution',480000,'ppm',3);**    default resolution is 140000, default ppm is 5.  (use the same ppm setting in elmaven peak picking).  
 <br />  **optcorr_batch('resolution',70000,'purity',0.98);**   default purity is 0.99.  no need to specify tracer type, which will be recognized automatically.
-<br />  **optcorr_batch('solver','isocorr');**   isocorr is the earlier algorithm that does not correct for non-tracer natural abundances. default is optcorr.
+<br />  **optcorr_batch('solver','isocorr');**   isocorr is the earlier algorithm that does not correct for non-tracer natural abundances. default is 'optcorr'.
 
  
       
