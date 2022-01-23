@@ -9,14 +9,25 @@ The state-of-the-art resolution-dependent algorithms like Accucorr and IsoCorv2 
 
 ## Usage of optcorr_batch():
 
-  Run matlab, in command window, type  
+  Run matlab, in command window, type
+  
+<br /> **optcorr_batch();**  
+call this function without any parameters will popup a FileOpenDialog to select the input file in elmaven output format (.csv) and save the outcome as (_ optcorr.xlsx) in the same folder
 
-<br /> **optcorr_batch();**  call this function without any parameters will popup a FileOpenDialog to select the input file in elmaven output format (.csv) and save the outcome as (_ optcorr.xlsx) in the same folder
-<br /> **optcorr_batch(name1,value1,name2,value2,...);**    this option allows you to use non-default settings by name-value pairs. For example:
-<br />  **optcorr_batch('fname','C:\data\example1.csv');**   if fname is specified, FileOpenDilaglog won't popup.
-<br />  **optcorr_batch('resolution',480000,'ppm',3);**    set instrument resolution and ppm.  default resolution is 140000, default ppm is 5. (make sure the same ppm value is used in elmaven).  
-<br />  **optcorr_batch('resolution',70000,'purity',0.98);**  set instrument resolution and tracer purity.  default purity is 0.99.  No need to specify tracer type, which will be recognized automatically.
-<br />  **optcorr_batch('solver','isocorr');**  choose a different solver.   "isocorr" is the earlier algorithm that does not correct for non-tracer natural abundances. default solver is 'optcorr'.  Currently, only these two solvers are available.
+<br /> **optcorr_batch(name1, value1, name2, value2, ...);**    
+this option allows you to use non-default settings by name-value pairs. For example:
+
+<br />  **optcorr_batch('fname', 'C:\data\example1.csv');**   
+if fname is specified, FileOpenDilaglog won't popup.
+
+<br />  **optcorr_batch('resolution', 480000, 'ppm', 3);**    
+set instrument resolution and ppm.  default resolution is 140000, default ppm is 5. (make sure the same ppm value is used in elmaven).  
+
+<br />  **optcorr_batch('resolution', 70000, 'purity', 0.98);**  
+set instrument resolution and tracer purity.  default purity is 0.99.  No need to specify tracer type, which will be recognized automatically.
+
+<br />  **optcorr_batch('solver', 'isocorr');**  
+choose a different solver.   "isocorr" is the earlier algorithm that does not correct for non-tracer natural abundances. default solver is 'optcorr'.  Currently, only these two solvers are available.
 
 or write a simple reusable script like this:
 
