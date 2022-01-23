@@ -9,7 +9,7 @@ The state-of-the-art resolution-dependent algorithms like Accucorr and IsoCorv2 
 
 ## Usage of optcorr_batch():
 
-  Run matlab, in command window, type
+  Run matlab, in command window, type in: (choose one of the following)
   
 <br /> **optcorr_batch();**  
 call this function without any parameters will popup a FileOpenDialog to select the input file in elmaven output format (.csv) and save the outcome as (_ optcorr.xlsx) in the same folder
