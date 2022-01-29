@@ -3,7 +3,6 @@
 % dmz = m/z window, tolerance for mid_reading
 % distin is the input MID. 
 function [x,err,ysim]=optcorr(mz,atoms,type,abd,imp,fwhm,dmz,distin,option)
-sum(distin)
     if isnan(sum(distin)) || sum(distin)==0  %input all zeros or nan, bypass        
        x=distin;
        err=0;
