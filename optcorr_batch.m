@@ -33,6 +33,8 @@ function optcorr_batch(varargin)
   para.ppm=p.Results.ppm;
   para.option=p.Results.option;
   para.parallel=p.Results.parallel;
+  para.solver=solver;
+  
   
 
 if isempty(fname)
@@ -40,11 +42,12 @@ if isempty(fname)
     fname=fullfile(filepath,filename);
 end
 fname
+para.fname=fname;
 fprintf('Please verify the following settings are correct!\n');
 fprintf(['purity = ',num2str(para.purity),'\n']);
 fprintf(['solver = ',solver,'\n']);
 warning('off');
-
+tic
 [meta,A,start_col]=elmaven_cor_in(fname); 
 if strcmp(solver,'optcorr')
     fprintf(['--resolution = ',num2str(para.resolution),'\n']);
@@ -58,5 +61,6 @@ else
     fprintf('select an algorithm: optcorr or isocorr');
     return
 end
-elmaven_cor_out(fname,fout,A,meta,start_col)
+para.toc=toc;
+elmaven_cor_out(fname,fout,A,meta,start_col,para)
 fprintf('Done!\n');
