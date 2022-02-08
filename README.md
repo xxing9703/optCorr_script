@@ -39,6 +39,13 @@ or write a simple reusable script like this:
 <br /> purity = 0.99;
 <br /> solver = 'optcorr';
 <br /> optcorr_batch('fname', fname, 'resolution', res, 'ppm', ppm, 'purity', purity, 'solver', solver);
-
-      
+## Input:
+Input file is the MAVEN/elMaven peak detection output in .csv format, with isotope detection option enabled.  The isotope for correction is automatically determined by the contents of the isotopeLabel column in your input data. Note that, only single isotope labeled is supported.  see "example1.csv".
+## Output: 
+The output is an excel file (.xlsx) of the same filename followed by _\_optcorr,_ containing 4 spread sheets:
+1. Original: A copy of the original input
+2. Corrected: absolute intensities after correction
+3. Normalized:  Normalized intensities after correction
+4. PoolAfterDF:  sum of all isotopes forms after correction 
+5. logs: parameter settings and runtime.
 
