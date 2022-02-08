@@ -35,7 +35,7 @@ for i=2:maxM+1
    tb_select=tb(abs([tb.dmz]-M)<0.5);
    S(i).stickX=[tb_select.dmz];
    S(i).stickY=[tb_select.ab];  
-      y=[]; %stores yy
+      y=zeros(length(tb_select),length(xx)); %stores yy      
      for k=1:length(tb_select)
       y(k,:)=tb_select(k).ab*exp(-(xx-tb_select(k).dmz).^2/sigma^2*4*log(2));
      end
@@ -48,8 +48,6 @@ for i=2:maxM+1
    S(i).spectY=yy;
    S(i).sigma=sigma;
    S(i).str={tb_select.str};
-   %S(i).pct=[cellstr(num2str([S(i).stickY*100]','%.1f%%'))]';
-   %S(i).pctrelative=[cellstr(num2str([S(i).stickY/S(1).stickY*100]','%.2f%%'))]';
    S(i).pct=S(i).stickY;
    S(i).pctrelative=S(i).stickY/S(1).stickY;
    [top,topindex]=max(S(i).spectY);

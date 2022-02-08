@@ -16,13 +16,12 @@ H=1.00728;
 dim=atoms(type);
 [M,Mp]=get_isomatrix(dim,abd(type),imp(type));
 ext=propagate(x,dim,M,Mp);
-%res=140000*sqrt(200/mz);
-%[out,tb]=peptide_mid1_formula(formula,charge,dim,ext,type);
 [out,tb]=mid_simulation(mz,atoms,dim,abd,ext,type);
 maxM=min(length(out)-1,dim);
-S = simul(out,tb,fwhm,maxM,0.1,0.00001);
+mzwindow=fwhm*15;
+stepsize=mzwindow*0.0005;
+S = simul(out,tb,fwhm,maxM,mzwindow,stepsize);
 y_simulated=mid_reading(type,maxM,dmz,S,option)*100; %output simulated reading
-
 %padding zeros to make y_exp and y_simulated the same length
 n=max(length(y_exp),length(y_simulated));
 
