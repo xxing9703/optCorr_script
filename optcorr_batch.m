@@ -57,8 +57,12 @@ if strcmp(solver,'optcorr')
 elseif strcmp(solver,'isocorr')
     meta=elmaven_isocor(meta,para);
     fout='_isocor';
+elseif strcmp(solver,'accucor')
+    para.option=3;
+    meta=elmaven_optcor(meta,para);
+    fout='_accucor';
 else
-    fprintf('select an algorithm: optcorr or isocorr');
+    fprintf('select an algorithm: optcorr, isocorr or accucor');
     return
 end
 para.toc=toc;
