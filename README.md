@@ -29,7 +29,7 @@ set instrument resolution and ppm.  default resolution is 140000, default ppm is
 set instrument resolution and tracer purity.  default purity is 0.99.  No need to specify tracer type, which will be recognized automatically.
 
 <br />  **optcorr_batch('solver', 'isocorr');**  
-choose a different solver.   "isocorr" is the earlier algorithm that does not correct for non-tracer natural abundances. default solver is 'optcorr'.  Currently, only these two solvers are available.
+choose a different solver.   "isocorr" is the earlier algorithm that does not correct for non-tracer natural abundances. 'Accucor' is based on the assumption of simple summation of unresolved peaks as the actural observed signal.   default solver is 'optcorr', which is based on peak gaussian profile superposition.
 
 or write a simple reusable script like this:
 
