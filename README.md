@@ -4,8 +4,7 @@ The state-of-the-art resolution-dependent algorithms like Accucorr and IsoCorv2 
 
 optCorr currently supports single labeled 13C, 15N or 2H isotope correction. 
 
-<br />  This is a light script verion of optCorr that contains the core "optcorr" function and a wrapper for batch processing elmaven output files: 
-
+<br />  This is a light script verion of optCorr that contains the core "optcorr" function and a wrapper for batch processing elmaven output files:
 <br />   function [distout,err,ysim]=optcorr(mz,atoms,type,abd,imp,fwhm,dmz,distin,option)
 <br />   function optcorr_batch(varargin)  
 
@@ -30,7 +29,7 @@ set instrument resolution and tracer purity.  default purity is 0.99.  No need t
 
 <br />  **optcorr_batch('solver', 'optcorr');**  
 3 different solvers are available for now, based on different assumptions.   
-<br />**'optcorr'** is the default solver, assumes gaussian-shaped peak superposition for unresolved peaks.  
+<br />**'optcorr'** is the default solver, assumes gaussian-shaped peak superposition for unresolved peaks.
 <br />**'isocorr'** is the earlier algorithm that does not correct for non-tracer natural abundances and is resolution independant. This is an approximation at infinitly high  resolution.
 <br />**'Accucor'** is based on the assumption of simple summation of unresolved peaks (resolution dependant) as the actural observed signal. The results should be similar to Accucor https://github.com/XiaoyangSu/AccuCor and isocorv2 https://github.com/MetaSys-LISBP/IsoCor/
 
