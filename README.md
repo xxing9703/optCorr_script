@@ -30,12 +30,12 @@ set instrument resolution and tracer purity.  default purity is 0.99.  No need t
 
 <br />  **optcorr_batch('solver', 'optcorr');**  
 3 different solvers are available for now, based on different assumptions.   
-**'optcorr'** is the default solver, assumes gaussian-shaped peak superposition for unresolved peaks.  
-**'isocorr'** is the earlier algorithm that does not correct for non-tracer natural abundances and is resolution independant. This is an approximation at infinitly high  resolution.
-**'Accucor'** is based on the assumption of simple summation of unresolved peaks (resolution dependant) as the actural observed signal. The results should be similar to Accucor https://github.com/XiaoyangSu/AccuCor and isocorv2 https://github.com/MetaSys-LISBP/IsoCor/
+<br />**'optcorr'** is the default solver, assumes gaussian-shaped peak superposition for unresolved peaks.  
+<br />**'isocorr'** is the earlier algorithm that does not correct for non-tracer natural abundances and is resolution independant. This is an approximation at infinitly high  resolution.
+<br />**'Accucor'** is based on the assumption of simple summation of unresolved peaks (resolution dependant) as the actural observed signal. The results should be similar to Accucor https://github.com/XiaoyangSu/AccuCor and isocorv2 https://github.com/MetaSys-LISBP/IsoCor/
+
 
 **or write a simple reusable script like this:**
-
 <br /> fname = 'example1.csv';
 <br /> res = 480000;
 <br /> ppm = 3;
