@@ -61,8 +61,10 @@ for i=2:maxM+1
     S(i).pk=pk;
     S(i).loc=loc;
    catch
-    S(i).pk=0;
-    S(i).loc=mean(S(i).spectX);
+%     S(i).pk=0;
+%     S(i).loc=mean(S(i).spectX);
+    [S(i).pk,id]=max(S(i).spectY);
+    S(i).loc=S(i).spectX(id);
    end
 end
 
