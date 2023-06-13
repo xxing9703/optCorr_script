@@ -7,6 +7,10 @@ optCorr currently supports single labeled 13C, 15N or 2H isotope correction.
 <br />  This is a light script verion of optCorr that contains the core "optcorr" function and a wrapper for batch processing elmaven output files:
 <br />   function [distout,err,ysim]=optcorr(mz,atoms,type,abd,imp,fwhm,dmz,distin,option)
 <br />   function optcorr_batch(varargin)  
+## Requirement
+ <br /> Please verify that Matlab 2017a or later and the following toolboxes are installed!
+ <br /> -- Statistical and machine learning toolbox
+ <br /> -- Signal processing toolbox
 
 ## Usage of optcorr_batch():
 
