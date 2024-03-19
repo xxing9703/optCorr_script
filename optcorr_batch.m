@@ -18,7 +18,7 @@ function optcorr_batch(varargin)
   addParameter(p,'solver','optcorr');
   addParameter(p,'resolution',140000);
   %addParameter(p,'abundance',[0.0110694,0.003663,0.00015]);
-  addParameter(p,'abundance',[0.0107,0.00364,0.000115]);%use the same as accucorr
+  addParameter(p,'abundance',[0.0107,0.00364,0.000115,0.00187]);%use the same as accucorr
   addParameter(p,'purity',0.99);
   addParameter(p,'ppm',5);
   addParameter(p,'option',1);

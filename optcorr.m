@@ -1,5 +1,5 @@
 % charge = -1,0,1
-% type = 1, 2, 3,  (C, N, N)
+% type = 1, 2, 3, 4  (C, N, H, O)
 % dmz = m/z window, tolerance for mid_reading
 % distin is the input MID. 
 % option: signal reading option

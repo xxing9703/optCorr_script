@@ -17,17 +17,18 @@ function [meta,A,start_col]=elmaven_cor_in(fname)
                 msgbox(['check row#',num2str(ids(1)+1),' for errors in the formula name: ',A_sub.formula{1}],'Error detected!');
                 return
               end
-              atom_num=tp(1:3);              
+              atom_num=tp(1:4);              
               
               lb=A_sub.isotopeLabel; %string analysis to get number of C,N,D
               counts=zeros(length(lb),2);
               for j=1:length(lb)
                  str=lb{j};
-                 [Cnum,Nnum,Dnum,errmsg]=str2CND(str);
+                 [Cnum,Nnum,Dnum,Onum,errmsg]=str2CNDO(str);
                  if errmsg==0
                    counts(j,1)=Cnum;
                    counts(j,2)=Nnum;
-                   counts(j,3)=Dnum;               
+                   counts(j,3)=Dnum;   
+                   counts(j,4)=Onum;
                  else
                    msgbox('erros in isotopeLabel detected');
                    return
