@@ -33,8 +33,9 @@ B1=[0,0,0,0.0020358,0.042099,0.2524,0.4931]; %abundance type B for +2
 C1=[0,0,0,0,0.00020529,0,0]; %abundance type C for +4
 
 if nargin>3  % use the abudances from input
-    A1(1:3)=abd(1:3);
+    A1(1:3)=abd(1:3);    
     A0(1:3)=1-A1(1:3);
+   
 end
 
 mzA=[1.00335,0.99703,1.00630,1.00422,0.99940,0,0]; %mz diff for +1
@@ -74,7 +75,11 @@ if nargin>4
      end
     end
     for i=1:length(ext)-1 
-        M(type,i)=ext(i+1)/ext(1)*ab_0_new; %modify type
+        if type==3
+          M(type,i)=ext(i+1)/ext(1)*ab_0_new; %modify type
+        elseif type==4
+          M(type+size(ab_A,1),i)=ext(i+1)/ext(1)*ab_0_new;  %updated 7/19/2024
+        end
     end
     ab_0=ab_0_new;      
   end 
