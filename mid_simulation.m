@@ -75,7 +75,7 @@ if nargin>4
      end
     end
     for i=1:length(ext)-1 
-        if type==3
+        if type<=3
           M(type,i)=ext(i+1)/ext(1)*ab_0_new; %modify type
         elseif type==4
           M(type+size(ab_A,1),i)=ext(i+1)/ext(1)*ab_0_new;  %updated 7/19/2024
