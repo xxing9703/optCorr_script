@@ -18,11 +18,15 @@ dim=atoms(type);
 ext=propagate(x,dim,M,Mp);
 [out,tb]=mid_simulation(mz,atoms,dim,abd,ext,type);
 maxM=min(length(out)-1,dim);
+if type==4
+    maxM=maxM*2;  % updated 7/22/2024
+end
 mzwindow=fwhm*15;
 stepsize=mzwindow*0.0005;
 S = simul(out,tb,fwhm,maxM,mzwindow,stepsize);
 y_simulated=mid_reading(type,maxM,dmz,S,fwhm,option)*100; %output simulated reading
 %padding zeros to make y_exp and y_simulated the same length
+
 n=max(length(y_exp),length(y_simulated));
 
 y_exp(end+1:n)=deal(0);

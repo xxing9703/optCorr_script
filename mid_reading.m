@@ -5,7 +5,7 @@
 % option 1:maximum (observed); option 2: nearest(observed) 3. sum up (stick based)
 
 function [sig,mzerr]=mid_reading(type,maxM,dmz,S,fwhm,option)
-mzShift=[1.00335,0.99703,1.00630,2.004245]; %mzshift for 13C, 15N, 2H
+mzShift=[1.00335,0.99703,1.00630,2.004245]; %mzshift for 13C, 15N, 2H,18O
 %type=1;
 %maxM=6;
 %ppm=5;
