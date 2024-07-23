@@ -27,7 +27,12 @@ S(1).sumrelative=1;
 S(1).toploc=0;
 S(1).pk=S(1).top; %pk signal and location from findpeaks
 S(1).loc=0;
-mz_defect=[tb([tb.pctGrp]==100).dmz];
+mz_defect=zeros(size(out,1));
+defect=[tb([tb.pctGrp]==100).dmz];
+for i=1:length(defect)
+    n=round(defect(i));
+    mz_defect(n+1)=defect(i);
+end
 for i=2:maxM+1
    M=mz_defect(i);
    %sigma = out(i).mz/res; %mass resolution in delta mz  at current mz
